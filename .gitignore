@@ -1,3 +1,10 @@
+#temp files not to go to github
+schedule.js
+
+#replit files
+.replit
+replit.nix
+
 # Logs
 logs
 *.log
