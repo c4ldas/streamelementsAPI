@@ -41,6 +41,7 @@ app.get('/top/:username', async (req, res) => {
   }
 
   const topUser = await getTopLeaderboard(accountId, amount)
+  console.log(`Channel: ${req.params.username} - Users: ${topUser}`)
   res.status(200).send(`${topUser}`)
 })
 
@@ -99,7 +100,6 @@ async function getTopLeaderboard(accountId, amount = 1) {
     })
 
     const topUsernames = totalUsers.join(', ')
-    console.log(topUsernames)
     return topUsernames
 
 
