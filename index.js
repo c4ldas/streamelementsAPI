@@ -41,7 +41,7 @@ app.get('/top/:username', async (req, res) => {
   }
 
   const topUser = await getTopLeaderboard(accountId, amount)
-  console.log(`Channel: ${req.params.username} - Users: ${topUser}`)
+  console.log(`${new Date().toLocaleTimeString('en-UK')} - Channel: ${req.params.username} - Users: ${topUser}`)
   res.status(200).send(`${topUser}`)
 })
 
@@ -108,11 +108,6 @@ async function getTopLeaderboard(accountId, amount = 1) {
     return { error: error.response.data.message, code: error.response.data.statusCode }
   }
 }
-
-
-
-
-
 
 app.listen(8000, () => console.log('listening'))
 
